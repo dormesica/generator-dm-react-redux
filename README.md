@@ -7,7 +7,7 @@ npm install -g generator-dm-react-redux
 ```
 
 ## Usage
-See <a link="https://github.com/dormesica/react-boilerplate">react-boilderplate</a> for reference about the boilderplate this generator is based upon.
+See [react-boilderplate](https://github.com/dormesica/react-boilerplate) for reference about the boilderplate this generator is based upon.
 
 First create the folder where the project should be generated.
 In this folder run:

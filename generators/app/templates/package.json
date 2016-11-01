@@ -1,0 +1,15 @@
+{
+  "name": "<%= appname %>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "compile": "webpack",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js  --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

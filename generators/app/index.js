@@ -76,6 +76,12 @@ function copyBasicFiles() {
         this.templatePath('webpack.config.js'),
         this.destinationPath('webpack.config.js')
     );
+
+    // copy .gitignore file
+    this.fs.copy(
+        this.templatePath('.gitignore'),
+        this.destinationPath('.gitignore')
+    )
 }
 
 /**
@@ -132,6 +138,17 @@ function installDevDependencies() {
     this.npmInstall(dependencies.devDependencies, { 'save-dev': true });
 }
 
+/**
+ * Logs running instructions for the project
+ */
+function runningInstructions() {
+    this.log('Your project has been created.');
+    this.log('In order to run the project, create a dist/bundle.js file by running "npm compile"');
+    this.log('Run webpack-dev-server by running: "npm start"');
+    this.log('Go to http://localhost:8080/');
+    this.log('For production simply set NODE_ENV=production and execute the above commands again.');
+}
+
 module.exports = generator.Base.extend({
     constructor: constructor,
     default: createFolderStructure,
@@ -143,5 +160,6 @@ module.exports = generator.Base.extend({
     install: {
         installDependencies: installDependencies,
         installDevDependencies: installDevDependencies
-    }
+    },
+    end: runningInstructions
 });

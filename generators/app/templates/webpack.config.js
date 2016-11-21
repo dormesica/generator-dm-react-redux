@@ -19,7 +19,7 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'react-hot!babel'
+                loader: 'babel'
             },
             {
                 test: /\.css$/,
@@ -32,7 +32,8 @@ module.exports = {
     },
     devServer: {
         contentBase: __dirname,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     plugins: debugModeEnabled ? [
         new webpack.HotModuleReplacementPlugin()

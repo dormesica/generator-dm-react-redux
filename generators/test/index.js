@@ -28,7 +28,7 @@ function requestMessage() {
 }
 
 function createTestFile() {
-    // create the test file name - format <name>.specs.js
+    // create the test file name - format <name>.spec.js
     var filename = createTestFileName(this.name);
     var testFolder = this.destinationPath('test');
 
@@ -55,16 +55,16 @@ function createTestFileName(inputName) {
         brokenName.pop();
     }
 
-    if (brokenName[brokenName.length - 1] === 'specs') {
-        // if the given name ends with specs (after discarding js ending) --> ignore
-        // pop the last item i.e. 'specs'
+    if (brokenName[brokenName.length - 1] === 'spec') {
+        // if the given name ends with spec (after discarding js ending) --> ignore
+        // pop the last item i.e. 'spec'
         brokenName.pop();
     }
 
     return _.kebabCase(brokenName.reduce(
         function (current, word) { return current + _.upperFirst(word) }, 
         ''
-    )) + '.specs.js';
+    )) + '.spec.js';
 }
 
 module.exports = generator.Base.extend({

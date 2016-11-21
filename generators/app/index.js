@@ -143,7 +143,7 @@ function installDevDependencies() {
  */
 function runningInstructions() {
     this.log('Your project has been created.');
-    this.log('In order to run the project, create a dist/bundle.js file by running "npm compile"');
+    this.log('In order to run the project, create a dist/bundle.js file by running "npm run build"');
     this.log('Run webpack-dev-server by running: "npm start"');
     this.log('Go to http://localhost:8080/');
     this.log('For production simply set NODE_ENV=production and execute the above commands again.');

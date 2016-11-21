@@ -76,7 +76,7 @@ Then, run the webpack-dev-server by executing:
 npm start
 ```
 
-Go to http://localhost:8080/ to view your project.
+Go to <code>http://localhost:8080/</code> to view your project.
 <br>
 
 For production the the <code>NODE_ENV</code> variable to <code>production</code> in order to create

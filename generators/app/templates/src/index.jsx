@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader';
 
 import Root from './Root';
 import store from './store/store';
@@ -13,3 +14,15 @@ ReactDOM.render(
     </Provider>,
     app
 );
+
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    const NextApp = require('./Root').default;
+    ReactDOM.render(
+      <AppContainer>
+         <NextApp />
+      </AppContainer>,
+      app
+    );
+  });
+}

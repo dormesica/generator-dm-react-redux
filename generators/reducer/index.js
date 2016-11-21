@@ -75,7 +75,7 @@ function createReducer() {
     // generate test file
     var reducerFunction = _.camelCase(filename);  // the name of the recuder function after import
     var reducerFile = '../src/store/reducers/' + filename;
-    var testFileName = filename + '.specs.js';
+    var testFileName = filename + '.spec.js';
     this.fs.copyTpl(
         this.templatePath('test-reducer-template.js'),
         this.destinationPath(path.join('test', testFileName)),

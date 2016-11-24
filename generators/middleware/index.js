@@ -55,7 +55,7 @@ function updateMiddlewareJs() {
 
     // generate relevant templates
     var importTemplate = _.template(
-        "import <%= middlewareFunction %> from ./middleware/<%= middlewareFile %>;"
+        "import <%= middlewareFunction %> from './middleware/<%= middlewareFile %>';"
     );
     var middlewareJsTemplate = _.template(
         this.fs.read(this.templatePath('all-middleware.js'))

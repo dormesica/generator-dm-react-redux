@@ -5,6 +5,6 @@ import allReducers from './reducers';
 
 const middleware = applyMiddleware(promiseMiddleware(), ...allMiddleware);
 const reducer = combineReducers(allReducers);
-const store = createStore(reducer);
+const store = createStore(reducer, null, middleware);
 
 export default store;

@@ -9,9 +9,11 @@ import store from './store/store';
 
 const app = document.getElementById('app');
 ReactDOM.render(
-    <Provider store={store}>
-        <Root />
-    </Provider>,
+    <AppContainer>
+        <Provider store={store}>
+            <Root />
+        </Provider>
+    </AppContainer>,
     app
 );
 
@@ -20,7 +22,9 @@ if (module.hot) {
     const NextApp = require('./Root').default;
     ReactDOM.render(
       <AppContainer>
-         <NextApp />
+          <Provider store={store}>
+              <NextApp />
+          </Provider>
       </AppContainer>,
       app
     );

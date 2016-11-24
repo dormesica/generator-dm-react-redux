@@ -2,7 +2,6 @@ var path = require('path');
 var generator = require('yeoman-generator');
 var mkdirp = require('mkdirp');
 var _ = require('lodash');
-var program = require('ast-query');
 
 
 function constructor() {

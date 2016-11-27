@@ -10,6 +10,9 @@ import { Router, Route, browserHistory } from 'react-router';
 
 class Root extends Component {
     render() {
+		return (
+			
+		);
     }
 }
 

@@ -5,13 +5,15 @@ import './<%= componentName %>.css';
 
 export class <%= componentName %> extends Component {
     render() {
-        
+        return (
+			
+		);
     }
 }
 
 function mapStateToProps(state) {
 
 }
-const <%= containerName %> = connect(mapStateToProps)(<%= className %>);
+const <%= containerName %> = connect(mapStateToProps)(<%= componentName %>);
 
 export default <%= containerName %>;

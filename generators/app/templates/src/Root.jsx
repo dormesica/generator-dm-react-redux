@@ -5,14 +5,19 @@
 // -----------------------------------------------------------------
 
 import React, { Component } from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, IndexRoute, Route, browserHistory } from 'react-router';
+import Layout from './components/Layout/Layout';
 
 
 class Root extends Component {
     render() {
-		return (
-			
-		);
+        return (
+            <Router history={browserHistory}>
+                <Route path="/" component={Layout}>
+                    { /** add more routes or delete if not needed */ }
+                </Route>
+            </Router>
+        );
     }
 }
 

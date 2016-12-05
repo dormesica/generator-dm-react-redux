@@ -6,7 +6,7 @@ module.exports.dependencies = [
     'react-dom',
     'react-redux',
     'react-router',
-    'react-hot-loader',
+    'react-hot-loader@3.0.0-beta.6',
     'redux',
     'redux-promise-middleware',
 	'thunk'

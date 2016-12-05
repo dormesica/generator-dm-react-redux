@@ -29,6 +29,13 @@ function constructor() {
         defaults: false
     }
     this.option("connected", connectedFlagOptions);
+
+    var pathOption = {
+        desc: 'Place the component at the given path relative to the components folder',
+        alias: 'p',
+        type: String
+    };
+    this.option('path', pathOption);
 }
 
 function createComponent() {
@@ -36,9 +43,12 @@ function createComponent() {
     componentName = _.upperFirst(_.camelCase(this.name));
 
     // detemine destination
-    var destinationPath = 'src/component';
+    var destinationPath = 'src/components';
     if (this.options.common) {
-        destinationPath = path.join('src/component/common');
+        destinationPath = 'src/components/common';
+    }
+    if (this.options.path) {
+        destinationPath = path.join(destinationPath, this.options.path);
     }
     destinationPath = path.join(destinationPath, componentName);
 
@@ -57,7 +67,6 @@ function createComponent() {
     // create the component file and css files
     var containerName = this.name + 'Container';
     var fileName = path.join(this.destinationPath(destinationPath), componentName);
-    this.log(fileName);
     this.fs.copyTpl(
         this.templatePath(sourceFile),
         fileName + '.jsx',

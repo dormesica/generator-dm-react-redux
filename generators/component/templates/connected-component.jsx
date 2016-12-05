@@ -7,7 +7,7 @@ export class <%= componentName %> extends Component {
     render() {
         return (
 			
-		);
+        );
     }
 }
 

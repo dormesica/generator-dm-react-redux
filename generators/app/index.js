@@ -26,7 +26,8 @@ function createFolderStructure() {
     this.log('creating folder structure');
 
     // create the src folder and its sub-directories
-    mkdirp.sync(this.destinationPath('src/component/common'));
+    mkdirp.sync(this.destinationPath('src/components/common'));
+    mkdirp.sync(this.destinationPath('src/components/Layout'));
     mkdirp.sync(this.destinationPath('src/actions'));
     mkdirp.sync(this.destinationPath('src/routes'));
     mkdirp.sync(this.destinationPath('src/store/middleware'));
@@ -96,6 +97,12 @@ function copySourceFiles() {
     this.fs.copy(
         this.templatePath('src/Root.jsx'),
         this.destinationPath('src/Root.jsx')
+    );
+
+    // copy components
+    this.fs.copy(
+        this.templatePath('src/components/Layout/Layout.jsx'),
+        this.destinationPath('src/components/Layout/Layout.jsx')
     );
 
     // copy the store files

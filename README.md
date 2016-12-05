@@ -29,6 +29,7 @@ possible flags:
 <ul>
 	<li> <b>common | C</b> - place the component under the common directory (Boolean)
     <li> <b>connected | c</b> - Also contains a container that is mapped to the Redux store (Boolean)
+	<li> <b>path | p</b> - Place the component at the given path relative to the components folder (String)
 </ul>
 
 ### Creating Reducers
